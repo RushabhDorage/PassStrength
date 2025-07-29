@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBERPASS // PASSWORD STRENGTH ANALYZER</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cyber-container">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="terminal-btn red"></span>
+                <span class="terminal-btn yellow"></span>
+                <span class="terminal-btn green"></span>
+            </div>
+            <h1 class="cyber-title">// CYBERPASS v3.0</h1>
+        </div>
+        
+        <div class="cyber-display">
+            <div class="scanline"></div>
+            <div class="password-input-container">
+                <input type="password" id="passwordInput" class="cyber-input" placeholder="ENTER PASSWORD TO ANALYZE..." autocomplete="off">
+                <button id="analyzeBtn" class="cyber-button">ANALYZE</button>
+                <button id="toggleVisibility" class="cyber-button small">SHOW</button>
+            </div>
+            
+            <div class="strength-meter">
+                <div class="strength-bar"></div>
+                <div class="strength-text" id="strengthText">PASSWORD STRENGTH: 0%</div>
+                <div class="crack-time" id="crackTime">CRACK TIME: INSTANT</div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">LENGTH</div>
+                    <div class="stat-value" id="lengthStat">0</div>
+                    <div class="stat-bar" id="lengthBar"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">UPPERCASE</div>
+                    <div class="stat-value" id="upperStat">0</div>
+                    <div class="stat-bar" id="upperBar"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">LOWERCASE</div>
+                    <div class="stat-value" id="lowerStat">0</div>
+                    <div class="stat-bar" id="lowerBar"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">NUMBERS</div>
+                    <div class="stat-value" id="numberStat">0</div>
+                    <div class="stat-bar" id="numberBar"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">SYMBOLS</div>
+                    <div class="stat-value" id="symbolStat">0</div>
+                    <div class="stat-bar" id="symbolBar"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">COMPLEXITY</div>
+                    <div class="stat-value" id="complexityStat">0</div>
+                    <div class="stat-bar" id="complexityBar"></div>
+                </div>
+            </div>
+            
+            <div class="advanced-stats">
+                <h2 class="cyber-subtitle">// ADVANCED SECURITY METRICS</h2>
+                <div class="stats-grid">
+                    <div class="stat-item" id="entropyItem">
+                        <div class="stat-label">ENTROPY (BITS)</div>
+                        <div class="stat-value" id="entropyStat">0.0</div>
+                        <div class="stat-bar" id="entropyBar"></div>
+                    </div>
+                    <div class="stat-item" id="commonItem">
+                        <div class="stat-label">COMMON PASSWORD</div>
+                        <div class="stat-value" id="commonStat">NO</div>
+                    </div>
+                    <div class="stat-item" id="patternsItem">
+                        <div class="stat-label">PATTERNS FOUND</div>
+                        <div class="stat-value" id="patternsStat">None</div>
+                    </div>
+                    <div class="stat-item" id="dictionaryItem">
+                        <div class="stat-label">DICTIONARY WORDS</div>
+                        <div class="stat-value" id="dictionaryStat">None</div>
+                    </div>
+                    <div class="stat-item" id="reuseItem">
+                        <div class="stat-label">REUSE RISK</div>
+                        <div class="stat-value" id="reuseStat">LOW</div>
+                    </div>
+                    <div class="stat-item" id="entropyScoreItem">
+                        <div class="stat-label">ENTROPY SCORE</div>
+                        <div class="stat-value" id="entropyScoreStat">0%</div>
+                        <div class="stat-bar" id="entropyScoreBar"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="recommendation" id="recommendation">
+                // PASSWORD ANALYSIS READY. ENTER PASSWORD TO BEGIN.
+            </div>
+        </div>
+        
+        <div class="cyber-footer">
+            <div class="glitch-effect">SYSTEM STATUS: ONLINE</div>
+            <div class="scanline"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
